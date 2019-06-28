@@ -81,6 +81,9 @@ public class tddsetup {
 	@When("add product to cart")
 	public void add_product_to_cart() {
 		driver.findElement(By.xpath("//html/body/section/div/div/div[2]/div/div/div/div[2]/center/a")).click();
+		
+		Assert.assertEquals( driver.findElement(By.xpath("//*[@id=\"header\"]/div[1]/div/div/div[2]/div/a[2]")).getText(),
+				 "Cart "+ driver.findElement(By.xpath("//*[@id=\"header\"]/div[1]/div/div/div[2]/div/a[2]/b")).getText()+"   ");
 		driver.findElement(By.xpath("//*[@id='header']/div[1]/div/div/div[2]/div/a[2]")).click();
 	    // Write code here that turns the phrase above into concrete actions
 	    //throw new cucumber.api.PendingException();
